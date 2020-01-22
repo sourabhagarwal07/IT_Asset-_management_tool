@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  
+    <!-- Page layout -->
+    <definition name="pageLayout" template="/WEB-INF/tiles/loginLayout.jsp">
+        <put-attribute name="title" value="Template" />
+        <put-attribute name="loginHeader" value="/WEB-INF/tiles/loginHeader.jsp" />
+        <put-attribute name="loginMenu" value="/WEB-INF/tiles/newmenu.jsp" />
+        <put-attribute name="loginBody" value="/WEB-INF/tiles/body.jsp" />
+    </definition>
+	
+    <definition name="Home" extends="pageLayout">
+        <put-attribute name="title" value="Home " />
+        <put-attribute name="loginBody" value="/WEB-INF/jsp/Home.jsp" />
+    </definition>
+    
+    <definition name="Login" extends="pageLayout">
+        <put-attribute name="title" value="Home " />
+        <put-attribute name="loginBody" value="/WEB-INF/jsp/Login.jsp" />
+    </definition>
+    
+    
+    <definition name="OldAsset" extends="pageLayout">
+        <put-attribute name="title" value="OldAsset " />
+        <put-attribute name="loginBody" value="/WEB-INF/jsp/OldAsset.jsp" />
+    </definition>
+	
+     
+    <definition name="NewAsset" extends="pageLayout">
+        <put-attribute name="title" value="New Asset " />
+        <put-attribute name="loginBody" value="/WEB-INF/jsp/NewAsset.jsp" />
+    </definition>
+    
+        
+    <definition name="AssetREg" extends="pageLayout">
+        <put-attribute name="title" value="AssetREg " />
+        <put-attribute name="loginBody" value="/WEB-INF/jsp/AssetREg.jsp" />
+    </definition>
+    
+    
+    <definition name="AssetTrf" extends="pageLayout">
+        <put-attribute name="title" value="AssetTrf " />
+        <put-attribute name="loginBody" value="/WEB-INF/jsp/AssetTrf.jsp" />
+    </definition>
+    
+</tiles-definitions>

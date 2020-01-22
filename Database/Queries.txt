@@ -1,0 +1,21 @@
+USERS table (For login id & password details)
+create table users(username varchar(15) unique,passwrd varchar(15),emp_id varchar(20) primary key,emp_name varchar(30),email_id varchar(30) CONSTRAINT email1 CHECK (REGEXP_LIKE (email_id,'^\w+(\.\w+)*+@\w+(\.\w+)+$')),ph_no number(10),dept varchar(20));
+ 
+Insert Query
+insert into users values('admin','admin','008','James Bond','james.bond@gmail.com','1234567890','cse');
+
+
+
+ASSET table (Master Table)
+create table asset(emp_id varchar(20),emp_name varchar(30),ph_no number(10),email_id varchar(30) CONSTRAINT email CHECK (REGEXP_LIKE (email_id,'^\w+(\.\w+)*+@\w+(\.\w+)+$')),dept varchar(20),div varchar(5),bld varchar(20),flr varchar(10),a_name varchar(10),aid_c varchar(20) unique,aid_j varchar(20) primary key,doi date,s_emp_id varchar(20),d_emp_id varchar(20),foreign key (emp_id) references users,foreign key (email_id) references users);
+
+Insert Query
+insert into asset values('006ftf5','raju','9874563220','aju@halwai.com','hl','kitt','jall','she','laptop','a4s5id6','e5igf5f','25-june-2015','NULL','NULL');
+
+
+
+ARF table( For requests)
+create table arf(emp_id varchar(20),emp_name varchar(30),ph_no number(10),email_id varchar(20),dept varchar(20),div varchar(5),bld varchar(10),flr varchar(10),a_name varchar(20),aid_c varchar(20),aid_j varchar(20),doi date,r_type varchar(10),rem varchar(20),sremp_id varchar(20),sremail_id varchar(20) CONSTRAINT sremail CHECK (REGEXP_LIKE (sremail_id,'^\w+(\.\w+)*+@\w+(\.\w+)+$')),foreign key (aid_j) references asset);
+
+Insert Query
+insert into arf values('006ftf5','raju','9874563220','aju@halwai.com','hl','kitt','jall','she','laptop','a4s5id6' ,'e5igf5f',to_date('2015-06-24','YYYY-MM-DD'),'request','NULL','NULL','abc@xyz.com');
